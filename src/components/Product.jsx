@@ -3,7 +3,7 @@ import ProductDetails from "./ProductDetails";
 
 function Product() {
   return (
-    <section>
+    <section className="flex flex-col gap-6">
       <ProductGallery />
 
       <ProductDetails />
