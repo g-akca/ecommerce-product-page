@@ -39,8 +39,8 @@ function ProductDetails() {
 
         <button 
           className="p-4 h-14 bg-orange-500 rounded-[10px] 
-            shadow-[0_20px_50px_rgba(255,126,27,0.25)] 
-            flex justify-center items-center gap-4 cursor-pointer tablet:grow
+            shadow-[0_20px_50px_rgba(255,126,27,0.25)] transition-all
+            flex justify-center items-center gap-4 cursor-pointer hover:bg-orange-300 tablet:grow
           "
         >
           <CartIcon className="h-4" />

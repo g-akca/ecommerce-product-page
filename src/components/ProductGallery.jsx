@@ -28,24 +28,24 @@ function ProductGallery() {
       </div>
 
       <div className="hidden desktop:grid h-22 w-full grid-cols-4 gap-8">
-        <div className="relative">
+        <div className="relative cursor-pointer group">
           <img src={product1Thumbnail} alt="Photo of sneakers" className="rounded-[10px] outline-2 outline-orange-500" />
-          <div className="absolute inset-0 bg-white/75 rounded-[10px]" />
+          <div className="absolute inset-0 rounded-[10px] bg-white/75 transition-all group-hover:block group-hover:bg-white/50" />
         </div>
 
-        <div className="relative">
+        <div className="relative cursor-pointer group">
           <img src={product2Thumbnail} alt="Photo of sneakers" className="rounded-[10px]" />
-          <div className="absolute inset-0 bg-white/75 rounded-[10px] hidden" />
+          <div className="absolute inset-0 rounded-[10px] transition-all group-hover:block group-hover:bg-white/50" />
         </div>
 
-        <div className="relative">
+        <div className="relative cursor-pointer group">
           <img src={product3Thumbnail} alt="Photo of sneakers" className="rounded-[10px]" />
-          <div className="absolute inset-0 bg-white/75 rounded-[10px] hidden" />
+          <div className="absolute inset-0 rounded-[10px] transition-all group-hover:block group-hover:bg-white/50" />
         </div>
 
-        <div className="relative">
+        <div className="relative cursor-pointer group">
           <img src={product4Thumbnail} alt="Photo of sneakers" className="rounded-[10px]" />
-          <div className="absolute inset-0 bg-white/75 rounded-[10px] hidden" />
+          <div className="absolute inset-0 rounded-[10px] transition-all group-hover:block group-hover:bg-white/50" />
         </div>
       </div>
     </section>
