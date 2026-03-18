@@ -20,7 +20,7 @@ function App() {
         {isMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/70 z-10"
+              className="fixed inset-0 bg-black/70 z-10 desktop:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}

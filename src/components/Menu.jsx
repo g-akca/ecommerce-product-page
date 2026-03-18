@@ -4,7 +4,7 @@ import CloseIcon from "./icons/CloseIcon";
 function Menu({ closeMenu }) {
   return (
     <motion.div
-      className="fixed top-0 left-0 w-62.5 h-full bg-white p-6 z-20"
+      className="fixed top-0 left-0 w-62.5 h-full bg-white p-6 z-20 tablet:w-75 tablet:py-12 tablet:px-20 desktop:hidden"
       initial={{ x: "-100%" }}
       animate={{ x: 0 }}
       exit={{ x: "-100%" }}
