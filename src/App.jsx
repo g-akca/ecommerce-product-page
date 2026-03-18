@@ -3,7 +3,7 @@ import Product from "./components/Product";
 
 function App() {
   return (
-    <div>
+    <div className="text-base leading-base text-grey-500">
       <Header />
 
       <main>

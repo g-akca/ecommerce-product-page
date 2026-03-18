@@ -1,6 +1,7 @@
+import CartIcon from "./CartIcon";
+
 import menuIcon from "/images/icon-menu.svg";
 import logoImg from "/images/logo.svg";
-import cartIcon from "/images/icon-cart.svg";
 import avatarImg from "/images/image-avatar.png";
 
 function Header() {
@@ -12,7 +13,7 @@ function Header() {
       </div>
 
       <div className="h-6 flex gap-6 items-center">
-        <img src={cartIcon} alt="Cart icon" className="h-5" />
+        <CartIcon className="h-5" />
         <img src={avatarImg} alt="User avatar" className="h-full" />
       </div>
     </header>

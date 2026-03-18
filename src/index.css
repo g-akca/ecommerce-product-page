@@ -13,6 +13,7 @@
   --font-base: "Kumbh Sans", sans-serif;
   --text-base: 16px;
   --leading-base: 26px;
+  --leading-auto: 100%;
 }
 
 :root {
