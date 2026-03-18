@@ -8,8 +8,8 @@ function Header() {
   return (
     <header 
       className="
-        px-6 pb-6 pt-5 flex justify-between items-center tablet:pb-8 tablet:pt-7 tablet:px-0 
-        tablet:max-w-200 tablet:w-full tablet:border-b tablet:border-b-grey-100 desktop:max-w-350
+        px-6 pb-6 pt-5 w-full flex justify-between items-center tablet:pb-8 tablet:pt-7 tablet:px-0 
+        tablet:max-w-200 tablet:border-b tablet:border-b-grey-100 desktop:max-w-350
       "
     >
       <div className="h-5 flex gap-4 items-end desktop:items-center desktop:gap-14">
@@ -18,11 +18,11 @@ function Header() {
 
         <nav className="hidden desktop:block">
           <ul className="flex gap-8 text-[15px]">
-            <li><a href="#" className="transition-all hover:text-grey-950">Collections</a></li>
-            <li><a href="#" className="transition-all hover:text-grey-950">Men</a></li>
-            <li><a href="#" className="transition-all hover:text-grey-950">Women</a></li>
-            <li><a href="#" className="transition-all hover:text-grey-950">About</a></li>
-            <li><a href="#" className="transition-all hover:text-grey-950">Contact</a></li>
+            <li><a href="#" className="relative transition-all hover:text-grey-950 after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.25 after:h-1 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full">Collections</a></li>
+            <li><a href="#" className="relative transition-all hover:text-grey-950 after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.25 after:h-1 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full">Men</a></li>
+            <li><a href="#" className="relative transition-all hover:text-grey-950 after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.25 after:h-1 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full">Women</a></li>
+            <li><a href="#" className="relative transition-all hover:text-grey-950 after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.25 after:h-1 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full">About</a></li>
+            <li><a href="#" className="relative transition-all hover:text-grey-950 after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-12.25 after:h-1 after:w-0 after:bg-orange-500 after:transition-all hover:after:w-full">Contact</a></li>
           </ul>
         </nav>
       </div>
