@@ -13,7 +13,7 @@ function Header({ openMenu }) {
       "
     >
       <div className="h-5 flex gap-4 items-end desktop:items-center desktop:gap-14">
-        <button>
+        <button className="cursor-pointer">
           <img src={menuIcon} alt="Menu icon" onClick={openMenu} className="h-3.75 desktop:hidden" />
         </button>
 

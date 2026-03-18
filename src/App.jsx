@@ -16,7 +16,10 @@ function App() {
       </main>
 
       {isMenuOpen && (
-        <Menu closeMenu={() => setIsMenuOpen(false)} />
+        <>
+          <Menu closeMenu={() => setIsMenuOpen(false)} isOpen={isMenuOpen} />
+          <div className="fixed inset-0 bg-black/70 z-10" onClick={() => setIsMenuOpen(false)}></div>
+        </>
       )}
     </div>
   )
