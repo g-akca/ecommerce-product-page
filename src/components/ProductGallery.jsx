@@ -5,7 +5,12 @@ import nextIcon from "/images/icon-next.svg";
 
 function ProductGallery() {
   return (
-    <section className="h-75 p-4 flex items-center bg-[url('/images/image-product-1.jpg')] bg-cover bg-center">
+    <section 
+      className="
+        h-75 p-4 flex items-center bg-[url('/images/image-product-1.jpg')] bg-cover bg-center
+        tablet:h-72.5 tablet:rounded-[15px]
+      "
+    >
       <div className="grow flex justify-between items-center">
         <IconButton>
           <img src={previousIcon} alt="Previous icon" className="w-2.5" />

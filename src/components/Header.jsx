@@ -9,7 +9,7 @@ function Header() {
     <header 
       className="
         px-6 pb-6 pt-5 flex justify-between items-center tablet:pb-8 tablet:pt-7 tablet:px-0 
-        tablet:border-b tablet:border-b-grey-100
+        tablet:max-w-225 tablet:w-full tablet:border-b tablet:border-b-grey-100
       "
     >
       <div className="h-5 flex gap-4 items-end">
