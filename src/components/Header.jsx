@@ -4,7 +4,7 @@ import menuIcon from "/images/icon-menu.svg";
 import logoImg from "/images/logo.svg";
 import avatarImg from "/images/image-avatar.png";
 
-function Header() {
+function Header({ openMenu }) {
   return (
     <header 
       className="
@@ -13,7 +13,10 @@ function Header() {
       "
     >
       <div className="h-5 flex gap-4 items-end desktop:items-center desktop:gap-14">
-        <img src={menuIcon} alt="Menu icon" className="h-3.75 desktop:hidden" />
+        <button>
+          <img src={menuIcon} alt="Menu icon" onClick={openMenu} className="h-3.75 desktop:hidden" />
+        </button>
+
         <img src={logoImg} alt="Logo titled sneakers" className="h-full" />
 
         <nav className="hidden desktop:block">
