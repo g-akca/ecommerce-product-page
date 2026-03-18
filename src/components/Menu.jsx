@@ -1,8 +1,15 @@
+import { motion } from "framer-motion";
 import CloseIcon from "./icons/CloseIcon";
 
 function Menu({ closeMenu }) {
   return (
-    <div className="bg-white p-6 fixed left-0 w-62.5 h-full z-20">
+    <motion.div
+      className="fixed top-0 left-0 w-62.5 h-full bg-white p-6 z-20"
+      initial={{ x: "-100%" }}
+      animate={{ x: 0 }}
+      exit={{ x: "-100%" }}
+      transition={{ ease: "easeInOut" }}
+    >
       <button className="cursor-pointer mb-14" onClick={closeMenu}>
         <CloseIcon className="transition-all hover:text-grey-950" />
       </button>
@@ -16,7 +23,7 @@ function Menu({ closeMenu }) {
           <li><a href="#" className="text-[18px] font-bold text-grey-950">Contact</a></li>
         </ul>
       </nav>
-    </div>
+    </motion.div>
   )
 }
 

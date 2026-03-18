@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 import Header from "./components/Header";
 import Product from "./components/Product";
@@ -15,14 +16,23 @@ function App() {
         <Product />
       </main>
 
-      {isMenuOpen && (
-        <>
-          <Menu closeMenu={() => setIsMenuOpen(false)} isOpen={isMenuOpen} />
-          <div className="fixed inset-0 bg-black/70 z-10" onClick={() => setIsMenuOpen(false)}></div>
-        </>
-      )}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/70 z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+            />
+
+            <Menu closeMenu={() => setIsMenuOpen(false)} />
+          </>
+        )}
+      </AnimatePresence>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
