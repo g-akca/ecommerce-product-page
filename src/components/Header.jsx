@@ -1,14 +1,19 @@
+import { useState } from "react";
+
 import CartIcon from "./icons/CartIcon";
+import Cart from "./Cart";
 
 import menuIcon from "/images/icon-menu.svg";
 import logoImg from "/images/logo.svg";
 import avatarImg from "/images/image-avatar.png";
 
 function Header({ openMenu }) {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
   return (
     <header 
       className="
-        px-6 pb-6 pt-5 w-full flex justify-between items-center tablet:pb-8 tablet:pt-7 tablet:px-0 
+        px-6 pb-6 pt-5 w-full flex justify-between items-center relative tablet:pb-8 tablet:pt-7 tablet:px-0 
         tablet:max-w-200 tablet:border-b tablet:border-b-grey-100 desktop:max-w-350
       "
     >
@@ -31,9 +36,15 @@ function Header({ openMenu }) {
       </div>
 
       <div className="h-6 flex gap-6 items-center tablet:gap-12 tablet:h-12.5">
-        <CartIcon className="h-5 cursor-pointer transition-all hover:text-grey-950" />
+        <button onClick={() => setIsCartOpen(prev => !prev)}>
+          <CartIcon className="h-5 cursor-pointer transition-all hover:text-grey-950" />
+        </button>
         <img src={avatarImg} alt="User avatar" className="h-full rounded-full cursor-pointer hover:border-2 hover:border-orange-500" />
       </div>
+
+      {isCartOpen && (
+        <Cart />
+      )}
     </header>
   )
 }
