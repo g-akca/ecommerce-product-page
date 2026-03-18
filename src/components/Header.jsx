@@ -1,4 +1,4 @@
-import CartIcon from "./CartIcon";
+import CartIcon from "./icons/CartIcon";
 
 import menuIcon from "/images/icon-menu.svg";
 import logoImg from "/images/logo.svg";

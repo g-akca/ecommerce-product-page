@@ -1,7 +1,6 @@
-import CartIcon from "./CartIcon";
-
-import minusIcon from "/images/icon-minus.svg";
-import plusIcon from "/images/icon-plus.svg";
+import CartIcon from "./icons/CartIcon";
+import MinusIcon from "./icons/MinusIcon";
+import PlusIcon from "./icons/PlusIcon";
 
 function ProductDetails() {
   return (
@@ -25,7 +24,7 @@ function ProductDetails() {
       <div className="flex flex-col gap-4 font-bold text-grey-950 tablet:flex-row tablet:gap-2 desktop:gap-4">
         <div className="bg-grey-50 rounded-[10px] p-4 h-14 flex justify-between items-center tablet:w-75 tablet:px-6 desktop:w-39.25 desktop:px-2">
           <button>
-            <img src={minusIcon} alt="Minus icon" />
+            <MinusIcon className="text-orange-500 cursor-pointer transition-all hover:text-orange-300" />
           </button>
 
           <span>
@@ -33,7 +32,7 @@ function ProductDetails() {
           </span>
 
           <button>
-            <img src={plusIcon} alt="Plus icon" />
+            <PlusIcon className="text-orange-500 cursor-pointer transition-all hover:text-orange-300" />
           </button>
         </div>
 
