@@ -9,12 +9,22 @@ function Header() {
     <header 
       className="
         px-6 pb-6 pt-5 flex justify-between items-center tablet:pb-8 tablet:pt-7 tablet:px-0 
-        tablet:max-w-225 tablet:w-full tablet:border-b tablet:border-b-grey-100
+        tablet:max-w-200 tablet:w-full tablet:border-b tablet:border-b-grey-100 desktop:max-w-350
       "
     >
-      <div className="h-5 flex gap-4 items-end">
-        <img src={menuIcon} alt="Menu icon" className="h-3.75" />
+      <div className="h-5 flex gap-4 items-end desktop:items-center desktop:gap-14">
+        <img src={menuIcon} alt="Menu icon" className="h-3.75 desktop:hidden" />
         <img src={logoImg} alt="Logo titled sneakers" className="h-full" />
+
+        <nav className="hidden desktop:block">
+          <ul className="flex gap-8 text-[15px]">
+            <li><a href="#">Collections</a></li>
+            <li><a href="#">Men</a></li>
+            <li><a href="#">Women</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
       </div>
 
       <div className="h-6 flex gap-6 items-center tablet:gap-12 tablet:h-12.5">
