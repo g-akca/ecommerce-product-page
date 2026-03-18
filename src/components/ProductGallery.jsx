@@ -1,7 +1,7 @@
 import IconButton from "./IconButton";
+import PreviousIcon from "./icons/PreviousIcon";
+import NextIcon from "./icons/NextIcon";
 
-import previousIcon from "/images/icon-previous.svg";
-import nextIcon from "/images/icon-next.svg";
 import product1Thumbnail from "/images/image-product-1-thumbnail.jpg";
 import product2Thumbnail from "/images/image-product-2-thumbnail.jpg";
 import product3Thumbnail from "/images/image-product-3-thumbnail.jpg";
@@ -18,11 +18,11 @@ function ProductGallery() {
       >
         <div className="grow flex justify-between items-center desktop:hidden">
           <IconButton>
-            <img src={previousIcon} alt="Previous icon" className="w-2.5" />
+            <PreviousIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
           </IconButton>
           
           <IconButton>
-            <img src={nextIcon} alt="Next icon" className="w-2.5" />
+            <NextIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
           </IconButton>
         </div>
       </div>
