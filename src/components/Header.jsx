@@ -26,8 +26,8 @@ function Header({ openMenu }) {
       "
     >
       <div className="h-5 flex gap-4 items-end desktop:items-center desktop:gap-14">
-        <button type="button" className="cursor-pointer" onClick={openMenu}>
-          <img src={menuIcon} alt="Menu icon" className="h-3.75 desktop:hidden" />
+        <button type="button" className="cursor-pointer desktop:hidden" onClick={openMenu}>
+          <img src={menuIcon} alt="Menu icon" className="h-3.75" />
         </button>
 
         <img src={logoImg} alt="Logo titled sneakers" className="h-full" />
