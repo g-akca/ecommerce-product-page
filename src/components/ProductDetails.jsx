@@ -58,7 +58,7 @@ function ProductDetails() {
           className="p-4 h-14 bg-orange-500 rounded-[10px] 
             shadow-[0_20px_50px_rgba(255,126,27,0.25)] transition-all
             flex justify-center items-center gap-4 cursor-pointer hover:not-disabled:bg-orange-300 tablet:grow
-            disabled:bg-orange-200 disabled:cursor-not-allowed
+            disabled:bg-orange-200 disabled:cursor-not-allowed disabled:shadow-none
           "
           onClick={() => addToCart(product, quantity)}
           disabled={quantity === 0}
