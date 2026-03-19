@@ -6,13 +6,14 @@ import MinusIcon from "./icons/MinusIcon";
 import PlusIcon from "./icons/PlusIcon";
 
 function ProductDetails() {
-  const { cart, addToCart, removeFromCart } = useCart();
+  const { cart, addToCart } = useCart();
 
   const product = {
     name: "Fall Limited Edition Sneakers",
-    price: 125
+    price: 125,
+    thumbnail: "/ecommerce-product-page/public/images/image-product-1-thumbnail.jpg"
   }
-  
+
   const [quantity, setQuantity] = useState(cart.find(item => item.name === product.name) ? cart.find(item => item.name === product.name).quantity : 0);
 
   return (
