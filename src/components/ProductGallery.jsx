@@ -21,22 +21,30 @@ function ProductGallery() {
     "/ecommerce-product-page/images/image-product-4.jpg",
   ];
 
+  function prevImage() {
+    currentIndex === 0 ? setCurrentIndex(images.length - 1) : setCurrentIndex(prev => prev - 1);
+  }
+
+  function nextImage() {
+    currentIndex === images.length - 1 ? setCurrentIndex(0) : setCurrentIndex(prev => prev + 1);
+  }
+
   return (
     <section className="flex flex-col gap-8 desktop:w-md desktop:flex-none">
       <div 
         onClick={() => setIsOpen(true)}
         className="
-          h-75 w-full p-4 flex items-center bg-cover bg-center cursor-pointer
+          relative h-75 w-full p-4 bg-cover bg-center cursor-pointer
           tablet:h-72.5 tablet:rounded-[15px] desktop:h-111.25
         "
         style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
-        <div className="grow flex justify-between items-center desktop:hidden">
-          <IconButton>
+        <div className="desktop:hidden">
+          <IconButton onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute left-4 top-1/2 -translate-y-1/2">
             <PreviousIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
           </IconButton>
           
-          <IconButton>
+          <IconButton onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute right-4 top-1/2 -translate-y-1/2">
             <NextIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
           </IconButton>
         </div>
@@ -68,21 +76,19 @@ function ProductGallery() {
         <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50">
           <div className="w-[60vh] flex flex-col items-center">
             <div className="w-full flex justify-end mb-6">
-              <button onClick={() => setIsOpen(false)} className="text-white cursor-pointer hover:text-orange-500">
+              <button onClick={() => setIsOpen(false)} className="text-white cursor-pointer transition-all hover:text-orange-500">
                 <CloseIcon />
               </button>
             </div>
 
-            <div className="w-full flex items-center mb-10 aspect-square bg-cover bg-center rounded-[15px]" style={{ backgroundImage: `url(${images[currentIndex]})` }}>
-              <div className="grow flex justify-between items-center">
-                <IconButton>
-                  <PreviousIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
-                </IconButton>
-                
-                <IconButton>
-                  <NextIcon className="w-3 text-grey-950 transition-all group-hover:text-orange-500" />
-                </IconButton>
-              </div>
+            <div className="relative w-full mb-10 aspect-square bg-cover bg-center rounded-[15px]" style={{ backgroundImage: `url(${images[currentIndex]})` }}>
+              <IconButton onClick={(e) => { e.stopPropagation(); prevImage(); }} className="absolute -left-6.75 top-1/2 -translate-y-1/2 w-14 h-14">
+                <PreviousIcon className="w-5 text-grey-950 transition-all group-hover:text-orange-500" />
+              </IconButton>
+              
+              <IconButton onClick={(e) => { e.stopPropagation(); nextImage(); }} className="absolute -right-6.75 top-1/2 -translate-y-1/2 w-14 h-14">
+                <NextIcon className="w-5 text-grey-950 transition-all group-hover:text-orange-500" />
+              </IconButton>
             </div>
 
             <div className="grid w-[80%] grid-cols-4 gap-8">
