@@ -5,17 +5,17 @@ const CartContext = createContext();
 export function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
 
-  const addToCart = (product, qty = 1) => {
+  const addToCart = (product, amount = 1) => {
     setCart(prevCart => {
       if (prevCart.find(item => item.name === product.name)) {
         return prevCart.map(item =>
           item.name === product.name
-            ? { ...item, quantity: qty }
+            ? { ...item, quantity: amount }
             : item
         );
       }
 
-      return [...prevCart, { ...product, quantity: qty }];
+      return [...prevCart, { ...product, quantity: amount }];
     });
   };
 

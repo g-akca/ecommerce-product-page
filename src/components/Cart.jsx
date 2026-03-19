@@ -1,6 +1,6 @@
 import { useCart } from "../context/CartContext";
 
-import deleteIcon from "/images/icon-delete.svg";
+import CartItem from "./CartItem";
 
 function Cart() {
   const { cart, removeFromCart } = useCart();
@@ -23,24 +23,10 @@ function Cart() {
       ) : (
         <div className="pt-6 px-6 flex flex-col gap-6">
           {cart.map(item => (
-            <div key={item.name} className="flex items-center justify-between">
-              <div className="flex gap-4 items-center">
-                <img src={item.thumbnail} className="h-12.5 aspect-square rounded-sm" />
-
-                <div>
-                  <p>{item.name}</p>
-
-                  <div className="flex gap-2">
-                    <p>${item.price.toFixed(2)} x {item.quantity}</p>
-                    <p className="text-grey-950 font-bold">${(item.price * item.quantity).toFixed(2)}</p>
-                  </div>
-                </div>
-              </div>
-
-              <button onClick={() => removeFromCart(item.name, item.quantity)} className="cursor-pointer">
-                <img src={deleteIcon} alt="Trash can icon" />
-              </button>
-            </div>
+            <CartItem
+              key={item.name}
+              {...item}
+            />
           ))}
 
           <button className="p-4 h-14 bg-orange-500 rounded-[10px] transition-all cursor-pointer hover:bg-orange-300">
