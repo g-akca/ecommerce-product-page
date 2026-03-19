@@ -11,7 +11,7 @@ function ProductDetails() {
   const product = {
     name: "Fall Limited Edition Sneakers",
     price: 125,
-    thumbnail: "/public/images/image-product-1-thumbnail.jpg"
+    thumbnail: "/ecommerce-product-page/images/image-product-1-thumbnail.jpg"
   }
 
   const existingItem = cart.find(item => item.name === product.name);
