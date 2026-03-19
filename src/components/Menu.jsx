@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import CloseIcon from "./icons/CloseIcon";
 
-import { navLinks } from "../data/navLinks";
+import navLinks from "../data/navLinks";
 
 function Menu({ closeMenu }) {
   return (

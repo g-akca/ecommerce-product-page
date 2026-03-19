@@ -25,11 +25,12 @@ function Cart() {
           {cart.map(item => (
             <CartItem
               key={item.name}
-              {...item}
+              item={item}
+              removeFromCart={removeFromCart}
             />
           ))}
 
-          <button className="p-4 h-14 bg-orange-500 rounded-[10px] transition-all cursor-pointer hover:bg-orange-300">
+          <button type="button" className="p-4 h-14 bg-orange-500 rounded-[10px] transition-all cursor-pointer hover:bg-orange-300">
             <span className="text-grey-950 font-bold">Checkout</span>
           </button>
         </div>

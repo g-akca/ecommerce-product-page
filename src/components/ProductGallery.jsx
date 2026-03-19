@@ -58,7 +58,7 @@ function ProductGallery() {
       <div className="hidden desktop:grid h-22 w-full grid-cols-4 gap-8">
         {thumbnails.map((thumb, index) => (
           <ProductThumbnail
-            key={index}
+            key={thumb}
             src={thumb}
             index={index}
             currentIndex={currentIndex}
@@ -89,7 +89,7 @@ function ProductGallery() {
             <div className="grid w-[80%] grid-cols-4 gap-8">
               {thumbnails.map((thumb, index) => (
                 <ProductThumbnail
-                  key={index}
+                  key={thumb}
                   src={thumb}
                   index={index}
                   currentIndex={currentIndex}

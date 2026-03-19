@@ -1,5 +1,5 @@
 import { useCart } from "../context/CartContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import CartIcon from "./icons/CartIcon";
 import MinusIcon from "./icons/MinusIcon";
@@ -14,7 +14,13 @@ function ProductDetails() {
     thumbnail: "/ecommerce-product-page/public/images/image-product-1-thumbnail.jpg"
   }
 
-  const [quantity, setQuantity] = useState(cart.find(item => item.name === product.name) ? cart.find(item => item.name === product.name).quantity : 0);
+  const existingItem = cart.find(item => item.name === product.name);
+  const [quantity, setQuantity] = useState(existingItem ? existingItem.quantity : 0);
+
+  useEffect(() => {
+    const existingItem = cart.find(item => item.name === product.name);
+    setQuantity(existingItem ? existingItem.quantity : 0);
+  }, [cart]);
 
   return (
     <section className="px-6 flex flex-col gap-8 tablet:px-0 tablet:gap-6 desktop:gap-8">
@@ -42,17 +48,20 @@ function ProductDetails() {
 
           <span>{quantity}</span>
 
-          <button onClick={() => setQuantity(prev => prev + 1)}>
+          <button type="button" onClick={() => setQuantity(prev => prev + 1)}>
             <PlusIcon className="text-orange-500 cursor-pointer transition-all hover:text-orange-300" />
           </button>
         </div>
 
         <button 
+          type="button"
           className="p-4 h-14 bg-orange-500 rounded-[10px] 
             shadow-[0_20px_50px_rgba(255,126,27,0.25)] transition-all
-            flex justify-center items-center gap-4 cursor-pointer hover:bg-orange-300 tablet:grow
+            flex justify-center items-center gap-4 cursor-pointer hover:not-disabled:bg-orange-300 tablet:grow
+            disabled:bg-orange-200 disabled:cursor-not-allowed
           "
           onClick={() => addToCart(product, quantity)}
+          disabled={quantity === 0}
         >
           <CartIcon className="h-4" />
           <span className="leading-auto">Add to cart</span>
