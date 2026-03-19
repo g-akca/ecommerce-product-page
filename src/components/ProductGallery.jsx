@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import IconButton from "./IconButton";
+import ProductThumbnail from "./ProductThumbnail";
 import PreviousIcon from "./icons/PreviousIcon";
 import NextIcon from "./icons/NextIcon";
 import CloseIcon from "./icons/CloseIcon";
@@ -21,6 +22,13 @@ function ProductGallery() {
     "/ecommerce-product-page/images/image-product-4.jpg",
   ];
 
+  const thumbnails = [
+    product1Thumbnail,
+    product2Thumbnail,
+    product3Thumbnail,
+    product4Thumbnail,
+  ];
+
   function prevImage() {
     currentIndex === 0 ? setCurrentIndex(images.length - 1) : setCurrentIndex(prev => prev - 1);
   }
@@ -33,10 +41,7 @@ function ProductGallery() {
     <section className="flex flex-col gap-8 desktop:w-md desktop:flex-none">
       <div 
         onClick={() => setIsOpen(true)}
-        className="
-          relative h-75 w-full p-4 bg-cover bg-center cursor-pointer
-          tablet:h-72.5 tablet:rounded-[15px] desktop:h-111.25
-        "
+        className="relative h-75 w-full p-4 bg-cover bg-center cursor-pointer tablet:h-72.5 tablet:rounded-[15px] desktop:h-111.25"
         style={{ backgroundImage: `url(${images[currentIndex]})` }}
       >
         <div className="desktop:hidden">
@@ -51,25 +56,15 @@ function ProductGallery() {
       </div>
 
       <div className="hidden desktop:grid h-22 w-full grid-cols-4 gap-8">
-        <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(0)}>
-          <img src={product1Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 0 ? "outline-2 outline-orange-500" : ""}`} />
-          <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 0 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-        </div>
-
-        <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(1)}>
-          <img src={product2Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 1 ? "outline-2 outline-orange-500" : ""}`} />
-          <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 1 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-        </div>
-
-        <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(2)}>
-          <img src={product3Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 2 ? "outline-2 outline-orange-500" : ""}`} />
-          <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 2 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-        </div>
-
-        <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(3)}>
-          <img src={product4Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 3 ? "outline-2 outline-orange-500" : ""}`} />
-          <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 3 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-        </div>
+        {thumbnails.map((thumb, index) => (
+          <ProductThumbnail
+            key={index}
+            src={thumb}
+            index={index}
+            currentIndex={currentIndex}
+            setCurrentIndex={setCurrentIndex}
+          />
+        ))}
       </div>
 
       {isOpen && (
@@ -92,25 +87,15 @@ function ProductGallery() {
             </div>
 
             <div className="grid w-[80%] grid-cols-4 gap-8">
-              <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(0)}>
-                <img src={product1Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 0 ? "outline-2 outline-orange-500" : ""}`} />
-                <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 0 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-              </div>
-
-              <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(1)}>
-                <img src={product2Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 1 ? "outline-2 outline-orange-500" : ""}`} />
-                <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 1 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-              </div>
-
-              <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(2)}>
-                <img src={product3Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 2 ? "outline-2 outline-orange-500" : ""}`} />
-                <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 2 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-              </div>
-
-              <div className="relative cursor-pointer group" onClick={() => setCurrentIndex(3)}>
-                <img src={product4Thumbnail} alt="Photo of sneakers" className={`rounded-[10px] ${currentIndex === 3 ? "outline-2 outline-orange-500" : ""}`} />
-                <div className={`absolute inset-0 rounded-[10px] transition-all group-hover:block ${currentIndex === 3 ? "bg-white/75" : "group-hover:bg-white/50"}`} />
-              </div>
+              {thumbnails.map((thumb, index) => (
+                <ProductThumbnail
+                  key={index}
+                  src={thumb}
+                  index={index}
+                  currentIndex={currentIndex}
+                  setCurrentIndex={setCurrentIndex}
+                />
+              ))}
             </div>
           </div>
         </div>
