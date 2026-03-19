@@ -37,7 +37,7 @@ function Header({ openMenu }) {
 
       <div className="h-6 flex gap-6 items-center tablet:gap-12 tablet:h-12.5">
         <div className="relative">
-          <button onClick={() => setIsCartOpen(prev => !prev)}>
+          <button onClick={() => setIsCartOpen(prev => !prev)} className="flex justify-center items-center">
             <CartIcon className="h-5 cursor-pointer transition-all hover:text-grey-950" />
           </button>
 
