@@ -37,7 +37,7 @@ function Cart() {
                 </div>
               </div>
 
-              <button onClick={() => removeFromCart(item.name, item.quantity)}>
+              <button onClick={() => removeFromCart(item.name, item.quantity)} className="cursor-pointer">
                 <img src={deleteIcon} alt="Trash can icon" />
               </button>
             </div>
