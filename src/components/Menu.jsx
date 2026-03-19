@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import CloseIcon from "./icons/CloseIcon";
 
+import { navLinks } from "../data/navLinks";
+
 function Menu({ closeMenu }) {
   return (
     <motion.div
@@ -10,17 +12,17 @@ function Menu({ closeMenu }) {
       exit={{ x: "-100%" }}
       transition={{ ease: "easeInOut" }}
     >
-      <button className="cursor-pointer mb-14" onClick={closeMenu}>
+      <button type="button" className="cursor-pointer mb-14" onClick={closeMenu}>
         <CloseIcon className="transition-all hover:text-grey-950" />
       </button>
 
       <nav>
         <ul className="flex flex-col gap-6">
-          <li><a href="#" className="text-[18px] font-bold text-grey-950">Collections</a></li>
-          <li><a href="#" className="text-[18px] font-bold text-grey-950">Men</a></li>
-          <li><a href="#" className="text-[18px] font-bold text-grey-950">Women</a></li>
-          <li><a href="#" className="text-[18px] font-bold text-grey-950">About</a></li>
-          <li><a href="#" className="text-[18px] font-bold text-grey-950">Contact</a></li>
+          {navLinks.map(link => (
+            <li key={link.label}>
+              <a href={link.href} className="text-[18px] font-bold text-grey-950">{link.label}</a>
+            </li>
+          ))}
         </ul>
       </nav>
     </motion.div>
