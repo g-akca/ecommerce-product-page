@@ -1,8 +1,12 @@
+import { useCart } from "../context/CartContext";
+
 import CartIcon from "./icons/CartIcon";
 import MinusIcon from "./icons/MinusIcon";
 import PlusIcon from "./icons/PlusIcon";
 
 function ProductDetails() {
+  const { cart, addToCart, removeFromCart } = useCart();
+
   return (
     <section className="px-6 flex flex-col gap-8 tablet:px-0 tablet:gap-6 desktop:gap-8">
       <div>

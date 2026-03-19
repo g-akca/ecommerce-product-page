@@ -1,4 +1,8 @@
+import { useCart } from "../context/CartContext";
+
 function Cart() {
+  const { cart, removeFromCart } = useCart();
+
   return (
     <div 
       className="
