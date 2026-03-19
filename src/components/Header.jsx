@@ -36,15 +36,18 @@ function Header({ openMenu }) {
       </div>
 
       <div className="h-6 flex gap-6 items-center tablet:gap-12 tablet:h-12.5">
-        <button onClick={() => setIsCartOpen(prev => !prev)}>
-          <CartIcon className="h-5 cursor-pointer transition-all hover:text-grey-950" />
-        </button>
+        <div className="relative">
+          <button onClick={() => setIsCartOpen(prev => !prev)}>
+            <CartIcon className="h-5 cursor-pointer transition-all hover:text-grey-950" />
+          </button>
+
+          {isCartOpen && (
+            <Cart />
+          )}
+        </div>
+
         <img src={avatarImg} alt="User avatar" className="h-full rounded-full cursor-pointer hover:border-2 hover:border-orange-500" />
       </div>
-
-      {isCartOpen && (
-        <Cart />
-      )}
     </header>
   )
 }
