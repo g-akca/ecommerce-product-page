@@ -34,7 +34,7 @@ function Header({ openMenu }) {
 
         <nav className="hidden desktop:block">
           <ul className="flex gap-8 text-[15px]">
-            {navLinks.map(link => {
+            {navLinks.map(link => (
               <li key={link.label}>
                 <a 
                   href={link.href} 
@@ -47,7 +47,7 @@ function Header({ openMenu }) {
                   {link.label}
                 </a>
               </li>
-            })}
+            ))}
           </ul>
         </nav>
       </div>
