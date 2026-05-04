@@ -42,7 +42,7 @@ function ProductDetails() {
 
       <div className="flex flex-col gap-4 font-bold text-grey-950 tablet:flex-row tablet:gap-2 desktop:gap-4">
         <div className="bg-grey-50 rounded-[10px] p-4 h-14 flex justify-between items-center tablet:w-75 tablet:px-6 desktop:w-39.25 desktop:px-2">
-          <button onClick={() => setQuantity(prev => prev === 0 ? 0 : prev - 1)}>
+          <button type="button" onClick={() => setQuantity(prev => prev === 0 ? 0 : prev - 1)}>
             <MinusIcon className="text-orange-500 cursor-pointer transition-all hover:text-orange-300" />
           </button>
 
