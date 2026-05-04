@@ -9,7 +9,7 @@ function Lightbox({ closeLightbox, images, thumbnails, currentIndex, setCurrentI
     <div className="fixed inset-0 bg-black/75 flex items-center justify-center z-50">
       <div className="w-[60vh] flex flex-col items-center">
         <div className="w-full flex justify-end mb-6">
-          <button onClick={closeLightbox} className="text-white cursor-pointer transition-all hover:text-orange-500">
+          <button type="button" onClick={closeLightbox} className="text-white cursor-pointer transition-all hover:text-orange-500">
             <CloseIcon />
           </button>
         </div>
